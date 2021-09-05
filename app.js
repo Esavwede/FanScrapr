@@ -22,8 +22,8 @@ async function Start()
     const loginPage = 'https://www.instagram.com/'
     const celebrityUsername = 'arts_yomide'
     const celebrityPage = `${baseUrl}/${celebrityUsername}`
-    const myUsername = 'esavwede84@gmail.com'
-    const myPassword = 'Norton123#'
+    const myUsername = ''
+    const myPassword = ''
 
     await page.goto(loginPage,{ waitUntil: 'load', timeout: 0})
 
