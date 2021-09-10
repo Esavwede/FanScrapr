@@ -46,6 +46,7 @@ async function start()
     const Browser = await puppeteer.launch() 
     const page = await Browser.newPage() 
 
+<<<<<<< HEAD
     // Set Defaults 
     const url = 'https://www.instagram.com'
     const login = 'https://www.instagram.com'
@@ -65,6 +66,27 @@ async function start()
     await page.type('input[name="username"]', email.trim() || username.trim() )
     await page.type('input[name="password"]',password)
     await Promise.all([await page.click('[type=submit]'),await page.waitForNavigation().catch(e => console.log(err) )])
+=======
+ 
+    // navigate 
+    const baseUrl = 'https://www.instagram.com/'
+    const loginPage = 'https://www.instagram.com/'
+    const celebrityUsername = 'arts_yomide'
+    const celebrityPage = `${baseUrl}/${celebrityUsername}`
+    const myUsername = ''
+    const myPassword = ''
+
+    await page.goto(loginPage,{ waitUntil: 'load', timeout: 0})
+
+    // wait for selectors to load 
+    await page.waitForSelector('input[name="username"]',{timeout: 0})
+    await page.waitForSelector('input[password="password"]',{timeout: 0})
+
+    // select elements for input 
+    await page.type("input[name=username]",myUsername)
+    await page.type("input[name=password]",myPassword)
+    await Promise.all([ await page.click("[type=submit]"), await page.waitForNavigation({ timeout:0, waitUntil:'load'}) ])
+>>>>>>> b1208ae237820c1ddd46c48a6f3edd20c9957a6e
     
 
     // take screen shot 
@@ -118,8 +140,12 @@ async function start()
     }
 
 
+<<<<<<< HEAD
     // Close 
     Browser.close() 
 }
 
 start() 
+=======
+Start() 
+>>>>>>> b1208ae237820c1ddd46c48a6f3edd20c9957a6e
