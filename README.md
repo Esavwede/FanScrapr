@@ -9,6 +9,17 @@
 
 
 
+### 
+  How to use
+    Download the zip file or pull
+  - open a terminal in the directory 
+  - run: npm install 
+  - run: node app 
+
+  A prompt will appear to take details 
+
+
+
 #### Technologies
 - node js
 - puppeteer
